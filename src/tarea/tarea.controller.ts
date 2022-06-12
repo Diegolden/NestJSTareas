@@ -29,13 +29,17 @@ export class TareaController {
     }
 
     @Put(':id')
-    UpdateHomework(@Param('id') id:string, @Body()updBody:CreateHomeworkDTO){
-        return `Updating Homework ${id}`;
+    UpdateHomework(@Param('id') id:any, @Body()updBody:CreateHomeworkDTO){
+        return this.tareasService.updateTarea(updBody,id);
+
+        //return `Updating Homework ${id}`;
     }
 
     @Delete(':id')
-    deleteHomework(@Param('id') id:string){
-        return `Deleting Homework ${id}`;
+    deleteHomework(@Param('id') id: string){
+
+        return this.tareasService.deleteTarea(id);
+       // return `Deleting Homework ${id}`;
     }
     
 }

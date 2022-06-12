@@ -12,7 +12,8 @@ export class TareaService {
     async getAllTareas(){
         return await this.tarea.find();
     }
-    async createTarea(tareaNueva:CreateHomeworkDTO){
+    async 
+    createTarea(tareaNueva:CreateHomeworkDTO){
         const newTarea = new tarea();
         newTarea.descripcion = tareaNueva.descripcion;
         newTarea.fecha = tareaNueva.fecha;
@@ -40,9 +41,9 @@ export class TareaService {
 
     }
 
-    async deleteTarea(){
+    async deleteTarea(id:any){
 
-        return this.tarea.delete
+        return await this.tarea.delete(id);
 
     }
     
