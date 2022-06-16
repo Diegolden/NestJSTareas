@@ -11,10 +11,9 @@ export class UsersService {
     
     }
     async getAllUsers(){
-        return await this.user.find();
+        return await this.user.find({relations:['tareas']});
     }
-    async 
-    createUser(usuarioNuevo:CreateUserDTO){
+    async createUser(usuarioNuevo:CreateUserDTO){
         const newUser = new user();
         newUser.nombre = usuarioNuevo.nombre;
         newUser.apellido = usuarioNuevo.apellido;
@@ -26,7 +25,7 @@ export class UsersService {
     }
 
     async findUser(id:number){
-        return await this.user.findOne(id);
+        return await this.user.findOne({relations:['tareas']});
     }
 
     
