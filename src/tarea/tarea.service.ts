@@ -28,6 +28,7 @@ export class TareaService {
         return await this.tarea.findOne(id);
     }
 
+    
     async updateTarea(tareaEditada:CreateHomeworkDTO,id:any){
 
         const updateTarea = await this.tarea.findOne(id)

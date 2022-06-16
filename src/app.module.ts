@@ -3,6 +3,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TareaModule } from './tarea/tarea.module';
+import { UsersModule } from './users/users.module';
 
 
 @Module({
@@ -18,6 +19,7 @@ import { TareaModule } from './tarea/tarea.module';
       entities: [__dirname+'/**/*.entity{.ts,.js}'],
       synchronize: true,
     }),
+    UsersModule,
   ],
   controllers: [AppController],
   providers: [AppService],
